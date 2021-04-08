@@ -1,12 +1,14 @@
 import React, { useContext, useReducer, useEffect, useRef, useState, createContext } from 'react';
 
+
+// ========================================== constantes globales
 const HOST_API = "http://localhost:8080/api";
 const initialState = {
   todo: { list: [], item: {} }
 };
 const Store = createContext(initialState)
 
-// =====================================================================
+// ====================================== form component + logic
 const Form = () => {
   const formRef = useRef(null);
   const { dispatch, state: { todo } } = useContext(Store);
@@ -64,6 +66,7 @@ const Form = () => {
   }
 
   return <form ref={formRef}>
+     <h3>To-Do List</h3>
     <input
       type="text"
       name="name"
@@ -76,9 +79,8 @@ const Form = () => {
     {!item.id && <button onClick={onAdd}>Crear</button>}
   </form>
 }
-// =======================================================================
 
-// =======================================================================
+// ===================================== list component + logic
 const List = () => {
   const { dispatch, state: { todo } } = useContext(Store);
   const currentList = todo.list;
@@ -150,7 +152,7 @@ const List = () => {
   </div>
 }
 
-// ================================================================================
+// ============= state logic
 
 
 function reducer(state, action) {
@@ -189,7 +191,7 @@ function reducer(state, action) {
       return state;
   }
 }
-// ==============================================================
+// ================== useReducer
 const StoreProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
@@ -199,10 +201,9 @@ const StoreProvider = ({ children }) => {
 
 }
 
-// ====================================================================0
+// ========== general react rendering
 function App() {
-  return <StoreProvider>
-    <h3>To-Do List</h3>
+  return <StoreProvider>   
     <Form />
     <List />
   </StoreProvider>
