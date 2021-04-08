@@ -6,7 +6,7 @@ const initialState = {
 };
 const Store = createContext(initialState)
 
-
+// =====================================================================
 const Form = () => {
   const formRef = useRef(null);
   const { dispatch, state: { todo } } = useContext(Store);
@@ -76,8 +76,9 @@ const Form = () => {
     {!item.id && <button onClick={onAdd}>Crear</button>}
   </form>
 }
+// =======================================================================
 
-
+// =======================================================================
 const List = () => {
   const { dispatch, state: { todo } } = useContext(Store);
   const currentList = todo.list;
@@ -149,6 +150,7 @@ const List = () => {
   </div>
 }
 
+// ================================================================================
 
 
 function reducer(state, action) {
@@ -187,7 +189,7 @@ function reducer(state, action) {
       return state;
   }
 }
-
+// ==============================================================
 const StoreProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
@@ -197,6 +199,7 @@ const StoreProvider = ({ children }) => {
 
 }
 
+// ====================================================================0
 function App() {
   return <StoreProvider>
     <h3>To-Do List</h3>
