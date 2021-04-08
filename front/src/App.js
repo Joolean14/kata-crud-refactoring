@@ -77,18 +77,20 @@ const Form = () => {
   return (
     <form ref={formRef}>
       <h3 className="title">To-Do App</h3>
-      <input
-        className="text-field-input"
-        type="text"
-        name="name"
-        placeholder="¿Qué piensas hacer hoy?"
-        defaultValue={item.name}
-        onChange={(event) => {
-          setState({ ...state, name: event.target.value });
-        }}
-      ></input>
-      {item.id && <button onClick={onEdit}>Actualizar</button>}
-      {!item.id && <button onClick={onAdd}>Crear</button>}
+      <div>
+        <input
+          className="text-field-input"
+          type="text"
+          name="name"
+          placeholder=" ¿Qué piensas hacer hoy?"
+          defaultValue={item.name}
+          onChange={(event) => {
+            setState({ ...state, name: event.target.value });
+          }}
+        ></input>
+        {item.id && <button onClick={onEdit}>Actualizar</button>}
+        {!item.id && <button className="boton-crear-actualizar" onClick={onAdd}>Crear</button>}
+      </div>
     </form>
   );
 };
@@ -145,7 +147,7 @@ const List = () => {
   };
   return (
     <div className="list-container">
-      <p>Lista</p>
+      <p className="bold">Lista</p>
 
       {currentList.map((todo) => {
         return (
@@ -163,10 +165,10 @@ const List = () => {
               ></input>
               {todo.id}
             </div>
-            <div>{todo.name}</div>
+            <div className="bold">{todo.name}</div>
             <div>
-              <button onClick={() => onDelete(todo.id)}>Eliminar</button>
-              <button onClick={() => onEdit(todo)}>Editar</button>
+              <button className="boton-eliminar" onClick={() => onDelete(todo.id)}>Eliminar</button>
+              <button className="boton-editar" onClick={() => onEdit(todo)}>Editar</button>
             </div>
           </div>
         );

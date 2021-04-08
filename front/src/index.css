@@ -11,7 +11,25 @@ code {
 }
 
 form {
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  display: inline;
+  padding: 15px;
+  color: white;
+  background-color: yellow;
+  font-size: 3vw;
+}
+
+.bold {
+  font-weight: 600;
+}
+
+.text-field-input {
+  border-radius: 10px; 
 }
 
 .list-container {
@@ -27,21 +45,10 @@ form {
   justify-content: space-between;
   border-radius: 30px;
   margin-top: 5px;
-
 }
 
-/* .list-element:hover {
-  opacity: 0.5;
-} */
 
-.title {
-  color: red;
-  font-size: 3vw;
-}
 
-.text-field-input {
-  border-radius: 10px; 
-}
 
 .checkbox {
   margin-right: 15px;
@@ -50,9 +57,28 @@ form {
 button {
   margin: 10px;
   border-radius: 10px;
+  text-decoration: none;
+  border: none;
+  color: white;
 
 }
 
 button:hover {
   opacity: 0.3;
 }
+
+.boton-eliminar {
+  background-color: #D9483B;
+}
+
+.boton-editar {
+  background-color: #3F9BBF;
+
+}
+
+.boton-crear-actualizar {
+  background-color: #41A677;
+  
+}
+
+/* Cambiar colores de los botones */
