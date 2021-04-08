@@ -1,10 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
 body {
   margin: 45px;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: 'Roboto', sans-serif;
 }
 
 code {
@@ -12,6 +10,49 @@ code {
     monospace;
 }
 
-h3 {
+form {
+  text-align: center;
+}
+
+.list-container {
+  padding: 1%;
+}
+
+.list-element {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  padding: 0 10px 0 10px;
+  border: yellow 2px solid;
+  justify-content: space-between;
+  border-radius: 30px;
+  margin-top: 5px;
+
+}
+
+/* .list-element:hover {
+  opacity: 0.5;
+} */
+
+.title {
   color: red;
+  font-size: 3vw;
+}
+
+.text-field-input {
+  border-radius: 10px; 
+}
+
+.checkbox {
+  margin-right: 15px;
+}
+
+button {
+  margin: 10px;
+  border-radius: 10px;
+
+}
+
+button:hover {
+  opacity: 0.3;
 }
