@@ -77,6 +77,7 @@ const Form = () => {
   return (
     <form ref={formRef}>
       <h3 className="title">To-Do App</h3>
+       {/* <Field />  */}
       <div>
         <input
           className="text-field-input"
@@ -88,7 +89,8 @@ const Form = () => {
             setState({ ...state, name: event.target.value });
           }}
         ></input>
-        {item.id && <button onClick={onEdit}>Actualizar</button>}
+        {/* <Boton /> que reciben props */}
+        {item.id && <button className="boton-crear-actualizar" onClick={onEdit}>Actualizar</button>}
         {!item.id && <button className="boton-crear-actualizar" onClick={onAdd}>Crear</button>}
       </div>
     </form>
@@ -157,6 +159,7 @@ const List = () => {
             style={todo.completed ? decorationDone : {}}
           >
             <div>
+              {/* <Checkbox /> */}
               <input
                 className="checkbox"
                 type="checkbox"
@@ -167,6 +170,7 @@ const List = () => {
             </div>
             <div className="bold">{todo.name}</div>
             <div>
+              {/* <Boton /> con props */}
               <button className="boton-eliminar" onClick={() => onDelete(todo.id)}>Eliminar</button>
               <button className="boton-editar" onClick={() => onEdit(todo)}>Editar</button>
             </div>
