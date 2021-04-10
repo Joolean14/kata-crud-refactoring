@@ -80,6 +80,7 @@ const Form = () => {
        {/* <Field />  */}
       <div>
         <input
+          required
           className="text-field-input"
           type="text"
           name="name"
@@ -90,8 +91,8 @@ const Form = () => {
           }}
         ></input>
         {/* <Boton /> que reciben props */}
-        {item.id && <button className="boton-crear-actualizar" onClick={onEdit}>Actualizar</button>}
-        {!item.id && <button className="boton-crear-actualizar" onClick={onAdd}>Crear</button>}
+        {item.id && <button className="boton-crear-actualizar" type="submit" onClick={onEdit}>Actualizar</button>}
+        {!item.id && <button className="boton-crear-actualizar" type="submit" onClick={onAdd}>Crear</button>}
       </div>
     </form>
   );
