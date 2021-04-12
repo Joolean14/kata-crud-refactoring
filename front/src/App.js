@@ -9,7 +9,7 @@ import React, {
 // import Form from './Form';
 // import List from './List';
 
-// ========================================== constantes globales
+//======================================== constantes globales
 const HOST_API = "http://localhost:8080/api";
 const initialState = {
   todo: { list: [], item: {} },
